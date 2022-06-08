@@ -9,12 +9,12 @@ services:
       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
       - SPRING_CLOUD_CONSUL_HOST=consul
       - SPRING_CLOUD_CONSUL_PORT=8500
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://store-postgresql:5432/store
-      - SPRING_LIQUIBASE_URL=jdbc:postgresql://store-postgresql:5432/store
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://host.docker.internal:5432/store
+      - SPRING_LIQUIBASE_URL=jdbc:postgresql://host.docker.internal:5432/store
       - SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI=http://keycloak:9080/auth/realms/jhipster
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_ID=internal
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET=internal
-      - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
+      - JHIPSTER_SLEEP=1 # gives time for other services to boot before the application
   store-postgresql:
     image: postgres:14.2
     # volumes:
